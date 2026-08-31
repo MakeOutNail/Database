@@ -67,17 +67,22 @@ int main() {
          if (input==".exit") {
              break; // Proper local variable cleanup
          }
-
-
-
-         switch (check_valid_statement(input)) {
-             case StatementType::insert:
-                 std::cout << "Recognized insert Statement: " << input << std::endl; break;
-             case StatementType::select:
-                 std::cout << "Recognized select Statement: " << input << std::endl; break;
-             case StatementType::unrecognized:
-                 std::cout << "Unrecognized statement: " << input << std::endl; break;
+         else if (input.starts_with('.')){
+             std::cout<< "Unrecognized command: " << input << std::endl;
          }
+         else {
+
+             switch (check_valid_statement(input)) {
+                 case StatementType::insert:
+                     std::cout << "Recognized insert Statement: " << input << std::endl; break;
+                 case StatementType::select:
+                     std::cout << "Recognized select Statement: " << input << std::endl; break;
+                 case StatementType::unrecognized:
+                     std::cout << "Unrecognized statement: " << input << std::endl; break;
+             }
+
+         }
+
 
 
 
