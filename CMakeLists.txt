@@ -6,7 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON) # do not fall back
 set(CMAKE_CXX_EXTENSIONS OFF) # Do not allow GNU-specific extensions
 
 
-add_executable(Database main.cpp)
+add_executable(Database main.cpp
+        statement.cpp
+        statement.hpp)
 
 
 # Enable Warnings
